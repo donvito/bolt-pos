@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-starbucks-brown-dark;
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-starbucks-brown-dark/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-starbucks-green/50 rounded-full 
+         hover:bg-starbucks-green/70 transition-colors
+         border-2 border-transparent bg-clip-padding;
+}
+
+::-webkit-scrollbar-corner {
+  @apply bg-transparent;
+}
+
+@layer components {
+  .btn-category {
+    @apply px-4 py-2 rounded-full text-sm font-medium transition-colors
+           whitespace-nowrap border border-starbucks-green/20;
+  }
+  
+  .btn-category.active {
+    @apply bg-starbucks-green text-white border-transparent;
+  }
+  
+  .btn-category.inactive {
+    @apply bg-starbucks-brown-light text-white/90 hover:bg-starbucks-brown border-starbucks-green/10;
+  }
+
+  .product-card {
+    @apply bg-starbucks-brown-light/50 p-4 rounded-xl shadow-lg transition-all
+           border border-starbucks-green/20 hover:bg-starbucks-brown-light
+           backdrop-blur-sm;
+  }
+}
